@@ -129,7 +129,7 @@ export const PRODUCTS: Product[] = [
         type: 'overview',
       },
       {
-        url: '/src/assets/images/hero_chamea_banner_1791534076925.jpg',
+        url: '/src/assets/images/hero_chamea_shelf_showcase_1791565155506.jpg',
         caption: '2. Ảnh góc phối cảnh bệ đá nghệ thuật tôn vinh phom dáng',
         type: 'angle_interior',
         isIllustration: true,
@@ -207,7 +207,7 @@ export const PRODUCTS: Product[] = [
         type: 'overview',
       },
       {
-        url: '/src/assets/images/hero_chamea_banner_1791534076925.jpg',
+        url: '/src/assets/images/hero_chamea_shelf_showcase_1791565155506.jpg',
         caption: '2. Ảnh góc phom dáng và đáy túi cấu trúc kiên cố',
         type: 'angle_interior',
         isIllustration: true,
@@ -283,7 +283,7 @@ export const COLLECTIONS_INFO = [
     subtitle: 'Trao đúng quà · Chạm đến trái tim người phụ nữ bạn trân trọng',
     description:
       'Bộ sưu tập những thiết kế túi xách được chăm chút tỉ mỉ từ phom dáng đến hộp quà sang trọng, gửi gắm trọn vẹn lời tri ân và thương mến đến mẹ, vợ, người yêu hay chính bản thân bạn.',
-    bannerImage: '/src/assets/images/hero_chamea_banner_1791534076925.jpg',
+    bannerImage: '/src/assets/images/hero_chamea_shelf_showcase_1791565155506.jpg',
     accentColor: '#3C2535',
   },
   {

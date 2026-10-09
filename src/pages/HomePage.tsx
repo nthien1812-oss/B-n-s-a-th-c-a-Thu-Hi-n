@@ -27,14 +27,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       {/* B. BANNER CHÍNH (HERO) */}
       <section className="relative w-full overflow-hidden bg-[#FAF7F2]">
         {/* Desktop Image Banner */}
-        <div className="hidden md:block relative w-full h-[580px] lg:h-[640px]">
+        <div className="hidden md:block relative w-full h-[580px] lg:h-[640px] group">
           <img
-            src="/src/assets/images/hero_chamea_banner_1791534076925.jpg"
-            alt="CHAMÉA - Quà tinh tế cho người đặc biệt"
-            className="w-full h-full object-cover"
+            src="/src/assets/images/hero_chamea_shelf_showcase_1791565155506.jpg"
+            alt="CHAMÉA - Quà tinh tế cho người đặc biệt - Kệ trưng bày BST 20/10"
+            className="w-full h-full object-cover object-right lg:object-center"
+            referrerPolicy="no-referrer"
           />
           {/* Subtle gradient overlay to enhance button contrast and text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/30 to-transparent flex items-center">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-transparent flex items-center">
             <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
               <div className="max-w-xl text-[#FEFBFD] space-y-5">
                 <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#ECD5D8] font-medium">
@@ -54,7 +55,38 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   Thiết kế thanh lịch, nữ tính và dễ ứng dụng — chạm đúng gu thẩm mỹ, trọn vẹn lời gửi gắm trân trọng.
                 </p>
 
-                <div className="pt-3 flex flex-wrap items-center gap-3">
+                {/* 3 Signature bags on shelf indicator */}
+                <div className="pt-1">
+                  <div className="text-[11px] text-[#D9C8BA] uppercase tracking-wider mb-2 font-medium flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-[#AB8A6B]" />
+                    <span>3 mẫu túi trên kệ trưng bày:</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      onClick={() => onNavigate('product-detail', { id: 'chamea-classic-flap-satchel' })}
+                      className="px-2.5 py-1.5 bg-black/40 hover:bg-black/60 border border-[#BCA388]/40 hover:border-[#AB8A6B] text-[11px] text-white flex items-center gap-1.5 backdrop-blur-xs transition-colors cursor-pointer"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-[#FAF7F2] border border-white/40" />
+                      <span>Trắng ngà (Satchel)</span>
+                    </button>
+                    <button
+                      onClick={() => onNavigate('product-detail', { id: 'chamea-classic-flap-satchel' })}
+                      className="px-2.5 py-1.5 bg-black/40 hover:bg-black/60 border border-[#BCA388]/40 hover:border-[#AB8A6B] text-[11px] text-white flex items-center gap-1.5 backdrop-blur-xs transition-colors cursor-pointer"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-[#3C2535] border border-[#AB8A6B]" />
+                      <span>Tím mận (Monogram)</span>
+                    </button>
+                    <button
+                      onClick={() => onNavigate('product-detail', { id: 'chamea-classic-flap-satchel' })}
+                      className="px-2.5 py-1.5 bg-black/40 hover:bg-black/60 border border-[#BCA388]/40 hover:border-[#AB8A6B] text-[11px] text-white flex items-center gap-1.5 backdrop-blur-xs transition-colors cursor-pointer"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-[#E8B8B8] border border-white/40" />
+                      <span>Hồng phấn (Satchel)</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div className="pt-2 flex flex-wrap items-center gap-3">
                   <button
                     onClick={() =>
                       onNavigate('collection-detail', { collection: 'qua-tang-20-10' })
@@ -84,15 +116,79 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
             </div>
           </div>
+
+          {/* Interactive Hotspot 1: Ivory Satchel on Top Shelf */}
+          <div className="absolute top-[28%] right-[22%] z-20 group/pin">
+            <button
+              onClick={() => onNavigate('product-detail', { id: 'chamea-classic-flap-satchel' })}
+              aria-label="Xem Túi Classic Satchel Trắng Ngà"
+              className="relative flex items-center justify-center w-7 h-7 rounded-full bg-[#3C2535]/80 text-[#FEFBFD] border border-[#AB8A6B] shadow-lg hover:scale-110 transition-transform cursor-pointer"
+            >
+              <span className="absolute inset-0 rounded-full bg-[#AB8A6B] animate-ping opacity-35" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FAF7F2]" />
+            </button>
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover/pin:block w-48 p-2.5 bg-[#3C2535]/95 text-white text-xs shadow-xl border border-[#AB8A6B]/60 backdrop-blur-xs pointer-events-auto">
+              <div className="font-serif text-[12px] font-medium text-[#FAF7F2]">Classic Satchel (Trắng Ngà)</div>
+              <div className="text-[11px] text-[#AB8A6B] font-medium mt-0.5">1.250.000₫ <span className="line-through text-white/50 text-[10px]">1.562.500₫</span></div>
+              <div className="text-[10px] text-white/70 mt-1">Nắp gập thanh lịch, quai xách đứng phom</div>
+              <div className="mt-1.5 text-[10px] text-[#AB8A6B] font-semibold flex items-center gap-1">
+                <span>Xem chi tiết</span>
+                <ArrowRight className="w-3 h-3" />
+              </div>
+            </div>
+          </div>
+
+          {/* Interactive Hotspot 2: Deep Plum Monogram Bag in Center */}
+          <div className="absolute top-[46%] right-[42%] z-20 group/pin">
+            <button
+              onClick={() => onNavigate('product-detail', { id: 'chamea-classic-flap-satchel' })}
+              aria-label="Xem Túi Monogram Tím Mận"
+              className="relative flex items-center justify-center w-7 h-7 rounded-full bg-[#3C2535]/80 text-[#FEFBFD] border border-[#AB8A6B] shadow-lg hover:scale-110 transition-transform cursor-pointer"
+            >
+              <span className="absolute inset-0 rounded-full bg-[#AB8A6B] animate-ping opacity-35" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#AB8A6B]" />
+            </button>
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover/pin:block w-48 p-2.5 bg-[#3C2535]/95 text-white text-xs shadow-xl border border-[#AB8A6B]/60 backdrop-blur-xs pointer-events-auto">
+              <div className="font-serif text-[12px] font-medium text-[#FAF7F2]">Monogram Satchel (Tím Mận)</div>
+              <div className="text-[11px] text-[#AB8A6B] font-medium mt-0.5">1.250.000₫ <span className="line-through text-white/50 text-[10px]">1.562.500₫</span></div>
+              <div className="text-[10px] text-white/70 mt-1">Khóa C đúc nổi lồng ruy băng & sao vàng</div>
+              <div className="mt-1.5 text-[10px] text-[#AB8A6B] font-semibold flex items-center gap-1">
+                <span>Xem chi tiết</span>
+                <ArrowRight className="w-3 h-3" />
+              </div>
+            </div>
+          </div>
+
+          {/* Interactive Hotspot 3: Dusty Rose Pink Satchel on Lower Shelf */}
+          <div className="absolute top-[65%] right-[14%] z-20 group/pin">
+            <button
+              onClick={() => onNavigate('product-detail', { id: 'chamea-classic-flap-satchel' })}
+              aria-label="Xem Túi Classic Satchel Hồng Phấn"
+              className="relative flex items-center justify-center w-7 h-7 rounded-full bg-[#3C2535]/80 text-[#FEFBFD] border border-[#AB8A6B] shadow-lg hover:scale-110 transition-transform cursor-pointer"
+            >
+              <span className="absolute inset-0 rounded-full bg-[#AB8A6B] animate-ping opacity-35" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#E8B8B8]" />
+            </button>
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover/pin:block w-48 p-2.5 bg-[#3C2535]/95 text-white text-xs shadow-xl border border-[#AB8A6B]/60 backdrop-blur-xs pointer-events-auto">
+              <div className="font-serif text-[12px] font-medium text-[#FAF7F2]">Classic Satchel (Hồng Phấn)</div>
+              <div className="text-[11px] text-[#AB8A6B] font-medium mt-0.5">1.250.000₫ <span className="line-through text-white/50 text-[10px]">1.562.500₫</span></div>
+              <div className="text-[10px] text-white/70 mt-1">Khóa kim loại khắc CHAMÉA ngọt ngào</div>
+              <div className="mt-1.5 text-[10px] text-[#AB8A6B] font-semibold flex items-center gap-1">
+                <span>Xem chi tiết</span>
+                <ArrowRight className="w-3 h-3" />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Mobile Vertical Poster View */}
         <div className="block md:hidden">
           <div className="relative aspect-4/5 w-full overflow-hidden">
             <img
-              src="/src/assets/images/hero_chamea_mobile_clean_1791542876621.jpg"
-              alt="CHAMÉA Poster"
+              src="/src/assets/images/hero_chamea_shelf_mobile_1791565184695.jpg"
+              alt="CHAMÉA Poster - Kệ trưng bày các mẫu túi"
               className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent flex flex-col justify-end p-6 text-white space-y-3">
               <span className="text-[10px] tracking-[0.2em] uppercase text-[#ECD5D8]">

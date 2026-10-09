@@ -67,7 +67,7 @@ const CHAPTERS: VideoChapter[] = [
     seconds: 12,
     title: 'Chiến dịch Quà tặng 20/10',
     desc: 'Ưu đãi 20% tất cả thiết kế, trọn bộ hộp quà cứng cao cấp',
-    image: '/src/assets/images/hero_chamea_banner_1791534076925.jpg',
+    image: '/src/assets/images/hero_chamea_shelf_showcase_1791565155506.jpg',
   },
 ];
 
